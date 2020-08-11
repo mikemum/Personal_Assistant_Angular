@@ -1,0 +1,79 @@
+
+<p>
+    <button id="add" mat-fab color="accent" (click)="showForm = !showForm">
+        <mat-icon>add</mat-icon>
+    </button>
+</p>
+
+<div *ngIf="showForm">
+    <form (ngSubmit)="addTodo()" [formGroup]="todoForm">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Task title" formControlName='title'>
+            <mat-error *ngIf="todoForm.controls['title'].hasError('required')"> </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Task description..." formControlName='description'></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Due date</mat-label>
+            <input type="date" matInput placeholder="Task title" formControlName='dueDate'>
+            <mat-error *ngIf="todoForm.controls['dueDate'].hasError('required')"> </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button>Submit</button>
+    </form>
+</div>
+
+<div *ngIf="(todos).length > 0">
+    <mat-accordion  multi *ngFor="let item of todos">
+        <mat-expansion-panel [ngClass]="(item.isActive)? 'active' : 'completed'" >
+            <mat-expansion-panel-header  >
+                <mat-panel-title>
+                    {{ item.isActive? 'Active': 'Completed'}}
+                </mat-panel-title>
+                <mat-panel-title>
+                    {{item.title}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{item.description}}
+                </mat-panel-description>
+                <mat-panel-description>
+                    {{item.duedate}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div >
+                <mat-form-field>
+                    <mat-label>Title</mat-label>
+                    <input (keyup)="saveButtonIsDisabled = false" matInput value="{{item.title}}" #edit_title>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Description</mat-label>
+                    <textarea (keyup)="saveButtonIsDisabled = false"  matInput value="{{item.description}}" #edit_description></textarea>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Due date</mat-label>
+                    <input (keyup)="saveButtonIsDisabled = false"  type="date" matInput value="{{item.duedate}}" #edit_duedate>
+                </mat-form-field>
+
+                <button mat-stroked-button [disabled]="(checkSaveButtonStatus()|async)"
+                    (click)="updateTodo(item, edit_title.value, edit_description.value, edit_duedate.value)">Save</button>
+                <button *ngIf="item.isActive" mat-stroked-button color="primary"
+                    (click)="completeTask(item)">Complete</button>
+                <button *ngIf="!item.isActive" mat-stroked-button color="primary"
+                    (click)="completeTask(item)">Activate</button>
+                <button mat-stroked-button color="warn"
+                    (click)="deleteTask(item)">Delete</button>
+            </div>
+
+        </mat-expansion-panel>
+        <br>
+    </mat-accordion>
+ 
+</div>

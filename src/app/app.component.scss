@@ -1,0 +1,51 @@
+.router-link-active {
+  // background-color: green;
+}
+
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+main {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+#virtual-assistant {
+  position: fixed;
+  bottom: 50px;
+  left: 92%;
+
+  img#lucy {
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    box-shadow: 10px 10px 20px #888888;
+
+    &:hover {
+      border: 1px solid #eee;
+      padding: 10px;
+      box-shadow: 10px 10px 20px #888888;
+      transform: scale(1.02);
+    }
+  }
+}
+
+footer#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3a4946;
+  color: white;
+  text-align: center;
+  height: 71px;
+  padding: 10px;
+}

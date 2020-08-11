@@ -1,0 +1,17 @@
+<!-- <form [formGroup]="galleryForm" >
+    <input formControlName="containerName" />
+    <button (click)="createContainer()">Create container</button>
+  
+</form>
+<hr /> -->
+
+
+<div class="gallery-nav">
+    <button mat-raised-button [routerLink]="['photos']" routerLinkActive="router-link-active">Photos</button>
+    <button mat-raised-button [routerLink]="['lectures']" routerLinkActive="router-link-active">Lectures</button>
+</div>
+
+
+<hr>
+
+<router-outlet></router-outlet>

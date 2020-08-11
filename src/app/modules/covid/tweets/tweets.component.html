@@ -1,0 +1,11 @@
+<mat-progress-bar mode="indeterminate" *ngIf="!tweets"></mat-progress-bar>
+
+
+<div class="covid-nav" *ngFor="let tweet of tweets">
+    <mat-card class="tweet">
+        <h3 mat-raised-button>{{tweet.full_text}}</h3>
+        <p>{{tweet.created_at}}</p>
+        <!-- <a href=`${news.url}`>{{tweet.tweet_id}} </a> -->
+    </mat-card>
+
+</div>

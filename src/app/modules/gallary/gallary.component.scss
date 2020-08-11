@@ -1,0 +1,41 @@
+.image-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.actions {
+  align-items: right;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.gallery-nav {
+  button {
+    margin-top: 25px;
+  }
+
+}
+
+.lecture-container {
+  display: grid;
+  grid-template-columns: 2fr 9fr;
+  // grid-template-rows: 1fr;
+
+}
+
+.outline {
+  display: inline-block;
+padding:15px;
+
+  border: 1px solid black;
+  background-color: red;
+
+}
+
+.outline-item {
+      margin: 5px !important;
+      padding: 22px !important;
+}

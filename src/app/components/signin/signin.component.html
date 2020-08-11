@@ -1,0 +1,60 @@
+<div class="form-container">
+
+    <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+        <mat-card>
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image">
+                    <mat-icon>face</mat-icon>
+                </div>
+                <mat-card-title> Log In</mat-card-title>
+                <mat-card-subtitle>All inputs with * are required</mat-card-subtitle>
+                <mat-card-subtitle>
+                    <mat-error *ngIf="signinError">
+                         <strong>Error:</strong> {{signinError}}
+                    </mat-error>
+                </mat-card-subtitle>
+
+            </mat-card-header>
+            <mat-card-content>
+
+                <!-- Email input -->
+                <p>
+                    <mat-form-field appearance='outline'>
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" required />
+                        <mat-hint align="end"> Minimum 3 characters </mat-hint>
+                        <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </p>
+                <!-- Password input -->
+                <p>
+                    <mat-form-field appearance='outline'>
+                        <mat-label>Password</mat-label>
+                        <input type="password" formControlName="password" matInput required />
+                        <mat-hint align="end"> Minimum 3 characters </mat-hint>
+                        <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </p>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color='accent' [disabled]="!loginForm.valid">
+                    <mat-icon>login</mat-icon> Log In
+                </button>
+                <mat-divider></mat-divider>
+                <mat-card-subtitle>
+                    Don't have have an acount?
+                    <a [routerLink]="['/signup']">
+                        Sign Up
+                    </a>
+                </mat-card-subtitle>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+
+</div>

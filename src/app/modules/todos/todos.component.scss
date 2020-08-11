@@ -1,0 +1,32 @@
+mat-form-field {
+  width: 40%;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+form {
+  margin-top: 20px
+}
+
+button#add {
+  margin-top: 20px;
+}
+
+.completed {
+  background-color: #ffffe6;
+
+  &:hover {
+    background-color: #ffffe6;
+  }
+}
+
+.active {
+  background-color: #e6ffe6;
+
+  &:hover {
+    background-color: #e6ffe6;
+  }
+}

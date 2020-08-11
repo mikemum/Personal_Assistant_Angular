@@ -1,0 +1,21 @@
+<div class="lectures">
+    <div class="actions">
+        <input type="file" multiple (change)="onFileChange($event)" />
+
+        <button (click)="upload()">Upload</button>
+
+    </div>
+
+    <p>
+        <mat-chip-list>
+            <mat-chip color="red" *ngFor="let lecture of lectures" [routerLink]="[lecture]">{{lecture.split('.')[0]}}
+            </mat-chip>
+        </mat-chip-list>
+    </p>
+    <hr>
+</div>
+
+
+
+
+<router-outlet></router-outlet>

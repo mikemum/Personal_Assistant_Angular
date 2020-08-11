@@ -1,0 +1,8 @@
+
+<mat-progress-bar mode="indeterminate" *ngIf="!statKeys"></mat-progress-bar>
+
+<mat-grid-list cols="3" rowHeight="2:1" class="covid-nav" >
+    <mat-grid-tile *ngFor="let key of statKeys">
+        <h1 class="stat_key">{{key.toUpperCase()}}</h1> <br>
+        <h1 class="stat_value">{{stats[key]}}</h1> </mat-grid-tile>
+</mat-grid-list>

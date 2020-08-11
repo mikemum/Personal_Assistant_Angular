@@ -1,0 +1,9 @@
+<mat-progress-bar mode="indeterminate" *ngIf="!newsData"></mat-progress-bar>
+
+<div class="news-list">
+    <mat-card *ngFor="let news of newsData">
+        <h3 class="headline" mat-raised-button>{{news.title}}</h3>
+        <p>{{news.published}}</p>
+        <a class="read_more" href=`${news.url}`>READ MORE... </a>
+    </mat-card>
+</div>
