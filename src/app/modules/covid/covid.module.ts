@@ -6,7 +6,7 @@ import { StatsComponent } from './stats/stats.component';
 import { NewsComponent } from './news/news.component';
 import { TweetsComponent } from './tweets/tweets.component';
 import { CovidComponent } from './covid.component';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
 import { CovidService } from './covid.service';
 
 

@@ -5,16 +5,16 @@ import { trigger, transition, style, animate } from '@angular/animations';
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
-  animations: [trigger('carouselAnimation', [
-    transition('void => *', [
-      style({ opacity: 0 }),
-      animate('1s', style({opacity: 1}))
+  animations: [
+    trigger('carouselAnimation', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate('1s', style({ opacity: 1 })),
+      ]),
+      transition('* => void', [animate('1s', style({ opacity: 0 }))]),
     ]),
-    transition('* => void', [
-      animate('1s', style({opacity: 0}))
-    ])
-  ])],
-  encapsulation:ViewEncapsulation.ShadowDom
+  ],
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class CarouselComponent implements OnInit {
   slides = [
@@ -44,7 +44,7 @@ export class CarouselComponent implements OnInit {
     setInterval(() => {
       const previous = this.currentSlide - 1;
       this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
-    }, 2000)
+    }, 2000);
   }
 
   ngOnInit(): void {}

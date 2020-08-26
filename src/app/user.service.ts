@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -78,11 +78,11 @@ export class UserService {
     );
   }
 
-  logOut(): void {
+  logOut(): Observable<any> {
     console.log('inside logout...');
     this.user = null;
     localStorage.setItem('user', null);
     localStorage.setItem('refreshToken', null);
-    // localStorage.setItem('refreshToken', null);
+    return of(true);
   }
 }

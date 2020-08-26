@@ -11,6 +11,13 @@ import { Component, OnInit } from '@angular/core';
         width: 100%;
         padding: 2em;
       }
+      ,
+      .services {
+        background-color:red;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+      }
     `,
   ],
 })
