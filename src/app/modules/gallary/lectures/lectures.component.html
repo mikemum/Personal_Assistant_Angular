@@ -1,9 +1,16 @@
 <div class="lectures">
-    <div class="actions">
+    <div class="actions" *ngIf="fileUpload ===''" >
         <input type="file" multiple (change)="onFileChange($event)" />
 
-        <button (click)="upload()">Upload</button>
+        <button *ngIf="showUpload" (click)="upload()">Upload</button>
 
+    </div>
+
+    <mat-progress-bar mode="indeterminate" *ngIf="fileUpload ==='start'"></mat-progress-bar>
+
+    
+    <div *ngIf="fileUpload ==='end'">
+        <h3>Done</h3>
     </div>
 
     <p>

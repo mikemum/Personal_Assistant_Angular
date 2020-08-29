@@ -103,10 +103,10 @@ export class TodosComponent implements OnInit {
     item: any,
     title: string,
     description: string,
-    duedate: string
+    dueDate: string
   ): void {
     console.log('inside updateTodo ... ', item._id);
-    let todoPatch = { title, description, duedate };
+    let todoPatch = { title, description, dueDate };
     this.updateTodo$ = this._todoService
       .updateTodo(item._id, todoPatch)
       .subscribe(this.updateTodoObserver);

@@ -1,13 +1,14 @@
 .sidenav-container {
   height: 100%;
-  
+
 }
 
-#nav-bar{
+#nav-bar {
   // position: fixed;
   // margin-bottom: 100px;
 
 }
+
 .sidenav {
   width: 200px;
 }
@@ -41,3 +42,22 @@ mat-nav-list.list-horizontal {
 .example-spacer {
   flex: 1 1 auto;
 }
+
+
+.fixed {
+  z-index: 999999;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 30px;
+  font-size: 20px;
+}
+
+

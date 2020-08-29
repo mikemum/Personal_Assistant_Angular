@@ -35,12 +35,11 @@ export class MainNavComponent {
  
   logOut(): void {
     console.log('inside logOut...');
-    this._userService.logOut();
-    this._userService.getUser()?.subscribe((u) => {
-      this.user = u;
-      console.log(this.user);
-      this.router.navigate(['/login']);
+    this._userService.logOut().subscribe(res => {
+      console.log({ res });
+      this.router.navigateByUrl('/signin');
     });
+      console.log('leaving logOut...');
   }
 
   checkUser(): Observable<any>{

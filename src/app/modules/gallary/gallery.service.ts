@@ -43,13 +43,14 @@ export class GalleryService {
     let blobItem = await iter.next();
     while (!blobItem.done) {
       blobItem = await iter.next();
-      console.log({blobItem})
+      // console.log({blobItem})
       let item = blobItem.value?.name;
       if (item) {
         blobList.push(item);
       }
     }
     if (blobItem.done) {
+      // console.log({blobList})
       return blobList;
     }
   }

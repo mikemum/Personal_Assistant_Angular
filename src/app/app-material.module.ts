@@ -17,7 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-const materialComponents = [
+const materialModules = [
   MatButtonModule,
   MatIconModule,
   MatToolbarModule,
@@ -39,7 +39,7 @@ const materialComponents = [
 ];
 
 @NgModule({
-  imports: [materialComponents],
-  exports: [materialComponents],
+  imports: [materialModules],
+  exports: [materialModules],
 })
 export class AppMaterialModule {}

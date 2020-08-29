@@ -5,7 +5,7 @@
 
     <mat-toolbar>Menu</mat-toolbar>
 
-    <mat-nav-list>
+    <mat-nav-list >
 
       <a mat-list-item [routerLink]="['']" routerLinkActive="router-link-active" class="mat-display-4">
         <h1>
@@ -45,7 +45,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar color="accent" >
+    <mat-toolbar color="accent" class="fixed sticky" >
       <mat-nav-list class="list-horizontal" id="nav-bar">
 
         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
@@ -54,7 +54,8 @@
         </button>
 
         <a mat-list-item [routerLink]="['']" routerLinkActive="router-link-active">
-          <h1>Personal Assistant</h1>
+        
+        <mat-icon>home</mat-icon>  Home
         </a>
 
         <a *ngIf="(checkUser() | async)" mat-list-item [routerLink]="['gallary']"
